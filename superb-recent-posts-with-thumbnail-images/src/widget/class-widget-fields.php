@@ -48,134 +48,133 @@ class WidgetField
     {
         switch ($constant) {
             case WidgetConstant::TITLE:
-                if (isset($this->Instance[ WidgetConstant::TITLE ])) {
-                    return $this->Instance[ WidgetConstant::TITLE ];
+                if (isset($this->Instance[WidgetConstant::TITLE])) {
+                    return $this->Instance[WidgetConstant::TITLE];
                 } else {
-                    return __('Recent Posts', 'superbrecentposts');
+                    return __('Recent Posts', 'superb-recent-posts-with-thumbnail-images');
                 }
-            break;
+                break;
 
             case WidgetConstant::NUMBER_OF_POSTS:
                 if (isset($this->Instance[WidgetConstant::NUMBER_OF_POSTS])) {
-                    return $this->Instance[ WidgetConstant::NUMBER_OF_POSTS ];
+                    return $this->Instance[WidgetConstant::NUMBER_OF_POSTS];
                 } else {
                     return 5;
                 }
-            break;
+                break;
 
             case WidgetConstant::DISPLAY_DATE:
                 if (isset($this->Instance[WidgetConstant::DISPLAY_DATE])) {
-                    return $this->Instance[ WidgetConstant::DISPLAY_DATE ] ? "checked" : "";
+                    return $this->Instance[WidgetConstant::DISPLAY_DATE] ? "checked" : "";
                 } else {
                     return "checked";
                 }
-            break;
+                break;
 
             case WidgetConstant::DISPLAY_THUMBNAILS:
                 if (isset($this->Instance[WidgetConstant::DISPLAY_THUMBNAILS])) {
-                    return $this->Instance[ WidgetConstant::DISPLAY_THUMBNAILS ] ? "checked" : "";
+                    return $this->Instance[WidgetConstant::DISPLAY_THUMBNAILS] ? "checked" : "";
                 } else {
                     return "checked";
                 }
-            break;
+                break;
 
             case WidgetConstant::ALIGN_THUMBNAILS:
                 if (isset($this->Instance[WidgetConstant::ALIGN_THUMBNAILS])) {
-                    return $this->Instance[ WidgetConstant::ALIGN_THUMBNAILS ] === "right" ? "right" : "left";
+                    return $this->Instance[WidgetConstant::ALIGN_THUMBNAILS] === "right" ? "right" : "left";
                 } else {
                     return "left";
                 }
-            break;
+                break;
 
             case WidgetConstant::ALIGN_TEXT:
                 if (isset($this->Instance[WidgetConstant::ALIGN_TEXT])) {
-                    return $this->Instance[ WidgetConstant::ALIGN_TEXT ] === "right" ? "right" : "left";
+                    return $this->Instance[WidgetConstant::ALIGN_TEXT] === "right" ? "right" : "left";
                 } else {
                     return "left";
                 }
-            break;
+                break;
 
             case WidgetConstant::EXCLUDE_CURRENT:
                 if (isset($this->Instance[WidgetConstant::EXCLUDE_CURRENT])) {
-                    return $this->Instance[ WidgetConstant::EXCLUDE_CURRENT ] ? "checked" : "";
+                    return $this->Instance[WidgetConstant::EXCLUDE_CURRENT] ? "checked" : "";
                 } else {
                     return "checked";
                 }
-            break;
+                break;
 
             case WidgetConstant::SHOW_BLOGPAGE:
                 if (isset($this->Instance[WidgetConstant::SHOW_BLOGPAGE])) {
-                    return $this->Instance[ WidgetConstant::SHOW_BLOGPAGE ] ? "checked" : "";
+                    return $this->Instance[WidgetConstant::SHOW_BLOGPAGE] ? "checked" : "";
                 } else {
                     return "checked";
                 }
-            break;
+                break;
 
             case WidgetConstant::SHOW_HOMEPAGE:
                 if (isset($this->Instance[WidgetConstant::SHOW_HOMEPAGE])) {
-                    return $this->Instance[ WidgetConstant::SHOW_HOMEPAGE ] ? "checked" : "";
+                    return $this->Instance[WidgetConstant::SHOW_HOMEPAGE] ? "checked" : "";
                 } else {
                     return "checked";
                 }
-            break;
+                break;
 
             case WidgetConstant::SHOW_PAGESPOSTS:
                 if (isset($this->Instance[WidgetConstant::SHOW_PAGESPOSTS])) {
-                    return $this->Instance[ WidgetConstant::SHOW_PAGESPOSTS ] ? "checked" : "";
+                    return $this->Instance[WidgetConstant::SHOW_PAGESPOSTS] ? "checked" : "";
                 } else {
                     return "checked";
                 }
-            break;
-
+                break;
         }
     }
 
     private function BuildField()
     {
-        ?>
+?>
         <p>
-            <label for="<?php echo esc_attr($this->ID); ?>"><?php echo esc_html($this->Label); ?></label> 
-                    <?php
-        switch ($this->Type) {
-            case "text":
-                ?>
+            <label for="<?php echo esc_attr($this->ID); ?>"><?php echo esc_html($this->Label); ?></label>
+            <?php
+            switch ($this->Type) {
+                case "text":
+            ?>
                     <input class="<?php echo esc_attr($this->Class); ?>" id="<?php echo esc_attr($this->ID); ?>" name="<?php echo esc_attr($this->Name); ?>" type="text" value="<?php echo esc_attr($this->Value); ?>" />
                 <?php
-                break;
+                    break;
 
-            case "number":
+                case "number":
                 ?>
                     <input class="<?php echo esc_attr($this->Class); ?>" id="<?php echo esc_attr($this->ID); ?>" name="<?php echo esc_attr($this->Name); ?>" type="number" value="<?php echo esc_attr($this->Value); ?>" step="1" min="1" size="3" />
                 <?php
-                break;
+                    break;
 
-            case "checkbox":
+                case "checkbox":
                 ?>
                     <input class="<?php echo esc_attr($this->Class); ?>" id="<?php echo esc_attr($this->ID); ?>" name="<?php echo esc_attr($this->Name); ?>" type="checkbox" <?php echo esc_html($this->Value); ?>>
                 <?php
-                break;
-            case "select":
-                    ?>
-                        <select class="<?php echo esc_attr($this->Class); ?>" id="<?php echo esc_attr($this->ID); ?>" name="<?php echo esc_attr($this->Name); ?>">
-                            <?php foreach ($this->Options as &$option) {
+                    break;
+                case "select":
+                ?>
+                    <select class="<?php echo esc_attr($this->Class); ?>" id="<?php echo esc_attr($this->ID); ?>" name="<?php echo esc_attr($this->Name); ?>">
+                        <?php foreach ($this->Options as &$option) {
                         ?>
-                                <option value="<?php echo esc_attr(strtolower($option)); ?>"<?php echo strtolower($this->Value)===strtolower($option)?'selected="selected"':''; ?>><?php echo esc_html($option); ?></option>
-                                <?php
-                    }
-                            unset($option);?>
-                        </select>
-                    <?php
-                break;
-        } ?>
+                            <option value="<?php echo esc_attr(strtolower($option)); ?>" <?php echo strtolower($this->Value) === strtolower($option) ? 'selected="selected"' : ''; ?>><?php echo esc_html($option); ?></option>
+                        <?php
+                        }
+                        unset($option); ?>
+                    </select>
+            <?php
+                    break;
+            } ?>
         </p>
-        <?php
+    <?php
     }
 
     public static function BuildLink()
     {
-        ?>
-        <p><a class="button button-large button-primary" target="_blank" style="color: #fff;" href="https://superbthemes.com/plugins/recent-posts/"><?php esc_html_e("View Premium Version", "superbrecentposts"); ?></a></p>
-        <?php
+    ?>
+        <p><a class="button button-large button-primary" target="_blank" style="color: #fff;" href="https://superbthemes.com/plugins/recent-posts/"><?php esc_html_e("View Premium Version", "superb-recent-posts-with-thumbnail-images"); ?></a></p>
+<?php
     }
 }
 

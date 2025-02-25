@@ -5,10 +5,10 @@ namespace SuperbRecentPosts;
 /*
 Plugin Name: Superb Recent Posts With Thumbnail Images
 Description: Responsive Recent Posts Widget With Images for WordPress. Lightweight & SEO Optimized Code. Free.
-Version: 1.4
+Version: 1.5.0
 Author: SuPlugins
 Author URI: http://superbthemes.com/
-Text Domain: superbrecentposts
+License: GPL2 or later
 */
 
 defined('ABSPATH') || exit;
@@ -18,7 +18,7 @@ if (!defined('WPINC')) {
 }
 // Constants
 if (!defined('SUPERBRECENTPOSTS_VERSION')) {
-    define('SUPERBRECENTPOSTS_VERSION', '1.4');
+    define('SUPERBRECENTPOSTS_VERSION', '1.5.0');
 }
 
 if (!defined('SUPERBRECENTPOSTS_BASE_PATH')) {

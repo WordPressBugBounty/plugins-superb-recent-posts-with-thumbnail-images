@@ -26,6 +26,11 @@ class SuperbRecentPosts
         add_action('wp_enqueue_scripts', array($this, 'spbrposts_register_scripts'));
         add_action('widgets_init', array($this, 'spbrposts_load_widget'));
         new PostsShortcodeController();
+
+        if (is_admin() && !class_exists('SuperbThemes\AddonsRecommender\NoticeController')) {
+            require_once SUPERBRECENTPOSTS_PLUGIN_DIR . '/recommender/recommender.php';
+            \SuperbThemes\AddonsRecommender\NoticeController::init();
+        }
     }
 
     public function spbrposts_load_widget()

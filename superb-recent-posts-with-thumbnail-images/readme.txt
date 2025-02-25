@@ -2,9 +2,9 @@
 Contributors: SuPlugins, Themeeverest
 Tags: recent, posts, with, images
 Requires at least: 3.0.1
-Tested up to: 6.5
+Tested up to: 6.7
 Requires PHP: 5.2.4
-Stable tag: 1.4.0
+Stable tag: 1.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -92,6 +92,9 @@ Yes! You need no coding & no programming skills to help us - what we need most o
 
 
 == Changelog ==
+= 1.5.0 =
+Various improvements and fixes.
+
 = 1.4.0 =
 Minor fixes.
 
