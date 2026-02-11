@@ -2,7 +2,7 @@
 Contributors: SuPlugins, Themeeverest
 Tags: recent, posts, with, images
 Requires at least: 3.0.1
-Tested up to: 6.7
+Tested up to: 6.9
 Requires PHP: 5.2.4
 Stable tag: 1.5.0
 License: GPLv2 or later
